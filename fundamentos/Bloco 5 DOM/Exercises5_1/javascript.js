@@ -1,0 +1,10 @@
+document.getElementById('header-container').style.backgroundColor= "green";
+document.getElementById('footer-container').style.backgroundColor = "black";
+document.querySelectorAll('div')[0].style.backgroundColor = "pink";
+document.querySelectorAll('div')[1].style.backgroundColor = "pink";
+document.querySelectorAll('div, h3')[1].style.backgroundColor = "purple";
+document.querySelectorAll('div, h3')[3].style.backgroundColor = "purple";
+document.querySelectorAll('div')[2].style.backgroundColor = "yellow";
+document.querySelectorAll('div')[3].style.backgroundColor = "yellow";
+document.querySelectorAll('h3')[2].style.backgroundColor = "black";
+document.querySelectorAll('h3')[3].style.backgroundColor = "black";
