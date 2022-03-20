@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p class="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p class="paragraph">Segundo parágrafo!</p>
+    </header>
+    <script>
+      /*  Parte 1 - Get element
+      1- Recupere o elemento que contém o título da página e faça algo com ele, como alterá-lo para o nome do seu filme favorito.
+      2- Agora recupere o segundo parágrafo e use sua criatividade para alterá-lo
+      3- Por fim, recupere o subtítulo e altere-o também.
+      4- Adicione uma classe igual para os dois parágrafos.
+      5- Recupere os seus parágrafos via código JavaScript , usando a função getElementsByClassName ;
+      6- Altere algum estilo do primeiro deles.
+      7- Recupere o subtítulo e altere a cor dele usando a função getElementsByTagName .
+
+      paragraph.style.color = "blue";
+      document.getElementById("page-title").innerText = "Filme preferido";
+      document.getElementById("subtitle").innerText = "Substitulo criativo";
+      document.getElementById("subtitle").style.color = "green";
+      document.getElementsByClassName("paragraph")[0].style.color = "red";
+      document.getElementsByClassName("paragraph")[1].style.color = "blue";
+      */
+      /* Parte 2 - query Selector
+      1- Para praticar, substitua todas as funções que você usou no exercício anterior por querySelector e/ou querySelectorAll .
+      */
+      document.querySelectorAll('.paragraph')[1].innerText = "Texto aleatoric";
+      document.querySelectorAll('p')[0].style.color = "blue";
+    </script>
+  </body>
+</html>
