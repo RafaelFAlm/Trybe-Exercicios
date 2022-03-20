@@ -16,23 +16,39 @@ document.getElementById('elementoOndeVoceEsta').nextElementSibling;
 document.getElementById('pai').lastElementChild.previousElementSibling;
 
 //9 Crie um irmão para elementoOndeVoceEsta .
-let divNova = document.createElement("div");
-let conteudoNovo = document.createTextNode("Elemento irmao foi adicionado");
-divNova.appendChild(conteudoNovo);
-pai.appendChild(divNova);
+let pai = document.getElementById('pai'); // recupera o elemento pai do elemento que tera seu novo irmaozinho
+let elementoIrmao = document.createElement('section'); // cria o futuro elemento irmao
+elementoIrmao.id = 'elementoIrmao'; //da um id ao elemento irmao
+pai.appendChild(elementoIrmao); // adiciona o elemento Irmao como filho do mesmo pai do ElementoOndeVoceEsta
 
 //10 Crie um filho para elementoOndeVoceEsta .
-let elementoFilho = document.createElement("div");
-let conteudoFilho = document.createTextNode ("Elemento filho de onde vc esta");
-elementoFilho.appendChild(conteudoFilho);
-elementoOndeVoceEsta.appendChild(elementoFilho);
+let elementoOndeVoceEsta =  document.getElementById('elementoOndeVoceEsta'); //mesmos passos acima, so q adicionamos filho direto para o Elemento Onde Voce Esta
+let elementoFilho = document.createElement('section');
+elementoFilho.id = 'elementoFilho';
+elementoOndeVoceEsta.appendChild(elementoFilho)
 
-//11 Crie um filho para primeiroFilhoDoFilho .
-let elementoFilhoDoFilho = document.createElement("div");
-let conteudoFilhoDoFilho = document.createTextNode ("Mais um filho chato");
-elementoFilhoDoFilho.appendChild(conteudoFilhoDoFilho);
-primeiroFilhoDoFilho.appendChild(elementoFilhoDoFilho);
+
+//11 Crie um filho para primeiroFilhoDoFilho 
+let primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho')
+let elementoBisneto = document.createElement('section');
+elementoBisneto.id = 'elementoBisneto';
+primeiroFilhoDoFilho.appendChild(elementoBisneto);
 
 //12 A partir desse filho criado, acesse terceiroFilho .
-elementoFilhoDoFilho .classList.add("fDF");
-document.getElementsByClassName('fDF').parentNode.nextElementSibling;
+let terceiroFilho = elementoBisneto.parentElement.parentElement.nextElementSibling;
+console.log(terceiroFilho)
+
+//13 Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho .
+
+let pai = document.getElementById('pai');
+
+for (let index = pai.childNodes.Length -1 ; index >= 0; index -=1){ 
+    // index recebe o tamanho de ChildNodes do pai -1 e, enquanto maior ou igual a zero, eh decrementado
+    // varia vel currentChild recebe o  childnode de pai na posicao index
+    let currentChild = pai.childNodes[index];
+    if (currentChild.id !== 'elementoOndeVoceEsta') { // verifica-se se o id eh igual ao elementoOndeVoceEsta, se nao for, a child eh removida
+        currentChild.remove();
+    }
+}
+
+
